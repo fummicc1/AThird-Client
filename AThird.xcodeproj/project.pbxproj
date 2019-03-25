@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F8A0EE231A4DE7DCB3FB16F /* Pods_AThirdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 646E6BB5E6FA29ACD7AE3937 /* Pods_AThirdTests.framework */; };
 		D32CD8B1224743E7008B4CCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD8B0224743E7008B4CCA /* AppDelegate.swift */; };
 		D32CD8B3224743E7008B4CCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD8B2224743E7008B4CCA /* ViewController.swift */; };
 		D32CD8B6224743E7008B4CCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D32CD8B4224743E7008B4CCA /* Main.storyboard */; };
@@ -14,6 +15,11 @@
 		D32CD8BB224743E9008B4CCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D32CD8B9224743E9008B4CCA /* LaunchScreen.storyboard */; };
 		D32CD8C6224743E9008B4CCA /* AThirdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD8C5224743E9008B4CCA /* AThirdTests.swift */; };
 		D32CD8D1224743E9008B4CCA /* AThirdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CD8D0224743E9008B4CCA /* AThirdUITests.swift */; };
+		D371F11F2248CC7C007B036D /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371F11E2248CC7C007B036D /* GameManager.swift */; };
+		D371F1212248CCBA007B036D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371F1202248CCBA007B036D /* UserModel.swift */; };
+		D371F1232248DCAC007B036D /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371F1222248DCAC007B036D /* BattleViewController.swift */; };
+		D74C96EAC3C6D010D613E685 /* Pods_AThird.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2909762E246505EA562292CE /* Pods_AThird.framework */; };
+		E7D95825E9419927362AD171 /* Pods_AThirdUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166229A644E0ED58863AC83D /* Pods_AThirdUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		166229A644E0ED58863AC83D /* Pods_AThirdUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AThirdUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C1785CD2BB2A1F6B66C733E /* Pods-AThird.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AThird.debug.xcconfig"; path = "Target Support Files/Pods-AThird/Pods-AThird.debug.xcconfig"; sourceTree = "<group>"; };
+		2909762E246505EA562292CE /* Pods_AThird.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AThird.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E134B21DEC3D376CE429143 /* Pods-AThirdUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AThirdUITests.debug.xcconfig"; path = "Target Support Files/Pods-AThirdUITests/Pods-AThirdUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		646E6BB5E6FA29ACD7AE3937 /* Pods_AThirdTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AThirdTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32CD8AD224743E7008B4CCA /* AThird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AThird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32CD8B0224743E7008B4CCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D32CD8B2224743E7008B4CCA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,13 @@
 		D32CD8CC224743E9008B4CCA /* AThirdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AThirdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32CD8D0224743E9008B4CCA /* AThirdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AThirdUITests.swift; sourceTree = "<group>"; };
 		D32CD8D2224743E9008B4CCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D371F11E2248CC7C007B036D /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		D371F1202248CCBA007B036D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D371F1222248DCAC007B036D /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		D6796DB57DE9095BAD78D996 /* Pods-AThirdTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AThirdTests.debug.xcconfig"; path = "Target Support Files/Pods-AThirdTests/Pods-AThirdTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DF91D4C5324D39E478E629EA /* Pods-AThirdUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AThirdUITests.release.xcconfig"; path = "Target Support Files/Pods-AThirdUITests/Pods-AThirdUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E00C699E5D2207B30C984027 /* Pods-AThird.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AThird.release.xcconfig"; path = "Target Support Files/Pods-AThird/Pods-AThird.release.xcconfig"; sourceTree = "<group>"; };
+		F303234D0DAA7563B031944A /* Pods-AThirdTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AThirdTests.release.xcconfig"; path = "Target Support Files/Pods-AThirdTests/Pods-AThirdTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D74C96EAC3C6D010D613E685 /* Pods_AThird.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F8A0EE231A4DE7DCB3FB16F /* Pods_AThirdTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +88,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7D95825E9419927362AD171 /* Pods_AThirdUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AB5007B3E3F4F898ABD611D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C1785CD2BB2A1F6B66C733E /* Pods-AThird.debug.xcconfig */,
+				E00C699E5D2207B30C984027 /* Pods-AThird.release.xcconfig */,
+				D6796DB57DE9095BAD78D996 /* Pods-AThirdTests.debug.xcconfig */,
+				F303234D0DAA7563B031944A /* Pods-AThirdTests.release.xcconfig */,
+				5E134B21DEC3D376CE429143 /* Pods-AThirdUITests.debug.xcconfig */,
+				DF91D4C5324D39E478E629EA /* Pods-AThirdUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BE40D9F2DAE68B95FE55F328 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2909762E246505EA562292CE /* Pods_AThird.framework */,
+				646E6BB5E6FA29ACD7AE3937 /* Pods_AThirdTests.framework */,
+				166229A644E0ED58863AC83D /* Pods_AThirdUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D32CD8A4224743E7008B4CCA = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +125,8 @@
 				D32CD8C4224743E9008B4CCA /* AThirdTests */,
 				D32CD8CF224743E9008B4CCA /* AThirdUITests */,
 				D32CD8AE224743E7008B4CCA /* Products */,
+				3AB5007B3E3F4F898ABD611D /* Pods */,
+				BE40D9F2DAE68B95FE55F328 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +143,15 @@
 		D32CD8AF224743E7008B4CCA /* AThird */ = {
 			isa = PBXGroup;
 			children = (
+				D32CD8BC224743E9008B4CCA /* Info.plist */,
 				D32CD8B0224743E7008B4CCA /* AppDelegate.swift */,
+				D371F1222248DCAC007B036D /* BattleViewController.swift */,
+				D371F11E2248CC7C007B036D /* GameManager.swift */,
+				D371F1202248CCBA007B036D /* UserModel.swift */,
 				D32CD8B2224743E7008B4CCA /* ViewController.swift */,
-				D32CD8B4224743E7008B4CCA /* Main.storyboard */,
 				D32CD8B7224743E9008B4CCA /* Assets.xcassets */,
 				D32CD8B9224743E9008B4CCA /* LaunchScreen.storyboard */,
-				D32CD8BC224743E9008B4CCA /* Info.plist */,
+				D32CD8B4224743E7008B4CCA /* Main.storyboard */,
 			);
 			path = AThird;
 			sourceTree = "<group>";
@@ -132,9 +181,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D32CD8D5224743E9008B4CCA /* Build configuration list for PBXNativeTarget "AThird" */;
 			buildPhases = (
+				7970CDAF538CAAE72ABCFF31 /* [CP] Check Pods Manifest.lock */,
 				D32CD8A9224743E7008B4CCA /* Sources */,
 				D32CD8AA224743E7008B4CCA /* Frameworks */,
 				D32CD8AB224743E7008B4CCA /* Resources */,
+				6DB336639F2FCBB4D9CE4FE9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +200,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D32CD8D8224743E9008B4CCA /* Build configuration list for PBXNativeTarget "AThirdTests" */;
 			buildPhases = (
+				DD7850B07CE0F1C47D14D7C2 /* [CP] Check Pods Manifest.lock */,
 				D32CD8BD224743E9008B4CCA /* Sources */,
 				D32CD8BE224743E9008B4CCA /* Frameworks */,
 				D32CD8BF224743E9008B4CCA /* Resources */,
@@ -167,6 +219,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D32CD8DB224743E9008B4CCA /* Build configuration list for PBXNativeTarget "AThirdUITests" */;
 			buildPhases = (
+				19F3BE5581C68796C0896732 /* [CP] Check Pods Manifest.lock */,
 				D32CD8C8224743E9008B4CCA /* Sources */,
 				D32CD8C9224743E9008B4CCA /* Frameworks */,
 				D32CD8CA224743E9008B4CCA /* Resources */,
@@ -251,13 +304,115 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19F3BE5581C68796C0896732 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AThirdUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DB336639F2FCBB4D9CE4FE9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AThird/Pods-AThird-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IBMSwiftCircuitBreaker/CircuitBreaker.framework",
+				"${BUILT_PRODUCTS_DIR}/KituraContracts/KituraContracts.framework",
+				"${BUILT_PRODUCTS_DIR}/KituraKit/KituraKit.framework",
+				"${BUILT_PRODUCTS_DIR}/LoggerAPI/LoggerAPI.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyRequest/SwiftyRequest.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircuitBreaker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KituraContracts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KituraKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LoggerAPI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyRequest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AThird/Pods-AThird-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7970CDAF538CAAE72ABCFF31 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AThird-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD7850B07CE0F1C47D14D7C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AThirdTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D32CD8A9224743E7008B4CCA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D32CD8B3224743E7008B4CCA /* ViewController.swift in Sources */,
+				D371F11F2248CC7C007B036D /* GameManager.swift in Sources */,
+				D371F1212248CCBA007B036D /* UserModel.swift in Sources */,
 				D32CD8B1224743E7008B4CCA /* AppDelegate.swift in Sources */,
+				D371F1232248DCAC007B036D /* BattleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +585,7 @@
 		};
 		D32CD8D6224743E9008B4CCA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C1785CD2BB2A1F6B66C733E /* Pods-AThird.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +604,7 @@
 		};
 		D32CD8D7224743E9008B4CCA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E00C699E5D2207B30C984027 /* Pods-AThird.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +623,7 @@
 		};
 		D32CD8D9224743E9008B4CCA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6796DB57DE9095BAD78D996 /* Pods-AThirdTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +645,7 @@
 		};
 		D32CD8DA224743E9008B4CCA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F303234D0DAA7563B031944A /* Pods-AThirdTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +667,7 @@
 		};
 		D32CD8DC224743E9008B4CCA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E134B21DEC3D376CE429143 /* Pods-AThirdUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +688,7 @@
 		};
 		D32CD8DD224743E9008B4CCA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF91D4C5324D39E478E629EA /* Pods-AThirdUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
