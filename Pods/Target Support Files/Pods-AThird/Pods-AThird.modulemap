@@ -1,0 +1,6 @@
+framework module Pods_AThird {
+  umbrella header "Pods-AThird-umbrella.h"
+
+  export *
+  module * { export * }
+}

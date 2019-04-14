@@ -1,0 +1,34 @@
+PODS:
+  - IBMSwiftCircuitBreaker (5.0.1):
+    - LoggerAPI (~> 1.7)
+  - KituraContracts (1.1.1):
+    - LoggerAPI (~> 1.7)
+  - KituraKit (0.0.22):
+    - KituraContracts (~> 1.1)
+    - SwiftyRequest (~> 2.0)
+  - LoggerAPI (1.8.0)
+  - SwiftyRequest (2.0.3):
+    - IBMSwiftCircuitBreaker (~> 5.0)
+    - LoggerAPI (~> 1.7)
+
+DEPENDENCIES:
+  - KituraKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - IBMSwiftCircuitBreaker
+    - KituraContracts
+    - KituraKit
+    - LoggerAPI
+    - SwiftyRequest
+
+SPEC CHECKSUMS:
+  IBMSwiftCircuitBreaker: d85929ca34eeec50bf84760fc07348111d6f4010
+  KituraContracts: 7130a5dc387f42d61e8195e9240df2d085228df1
+  KituraKit: ade24294fcd44fb05cab7402d457a49ca2b3d577
+  LoggerAPI: f371d1fd0fa99d7c973a7b02bc5c65eb245981d2
+  SwiftyRequest: f333b38331bea503dfba92e95107eadee38d152d
+
+PODFILE CHECKSUM: 2f7851a66bcfb035596c46fd19a59c15dba0ece0
+
+COCOAPODS: 1.6.0

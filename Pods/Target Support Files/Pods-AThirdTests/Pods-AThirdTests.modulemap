@@ -1,0 +1,6 @@
+framework module Pods_AThirdTests {
+  umbrella header "Pods-AThirdTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

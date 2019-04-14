@@ -1,30 +1,19 @@
-//
-//  BattleViewController.swift
-//  AThird
-//
-//  Created by Fumiya Tanaka on 2019/03/25.
-//  Copyright © 2019 Fumiya Tanaka. All rights reserved.
-//
-
 import UIKit
+import KituraKit
+import KituraContracts
 
 class BattleViewController: UIViewController {
 
+    private let kitura = KituraKit(baseURL: "http://localhost:8080")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func selectJoker(me: Me) {
+        kitura?.post("/aThird/selectJoker", data: me, respondWith: { (isCorrect: Bool?, requestError: Error?) -> () in
+            
+        })
     }
-    */
-
+    
 }
