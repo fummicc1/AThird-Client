@@ -1,14 +1,8 @@
 import UIKit
-import KituraKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var nameTextField: UITextField!    
-    @IBOutlet var aButton: UIButton!
-    @IBOutlet var bButton: UIButton!
-    @IBOutlet var cButton: UIButton!
-    
-    let kitura = KituraKit(baseURL: "http://localhost:8080")
+    @IBOutlet var nameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,20 +10,18 @@ class ViewController: UIViewController {
     
     @IBAction func didTapCard(sender: UIButton) {
         guard let name = nameTextField.text, !name.isEmpty else {
+            let alert = UIAlertController(title: "エラー", message: "ユーザー名を先に入力してください。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
             return
         }
-        let score = UserDefaults.standard.integer(forKey: "score")
         let jokerNumber = sender.tag
-        let me = Me(name: name, joker: jokerNumber, score: score)
+        var me = Me(name: name, joker: jokerNumber, score: nil)
+        if let scoredUnixDate = UserDefaults.standard.object(forKey: "scoredUnixDate") as? TimeInterval {
+            let scoreValue = UserDefaults.standard.object(forKey: "scoreValue") as! Int
+            me.score = Score(date: Date(timeIntervalSince1970: scoredUnixDate), value: scoreValue)
+        }
         GameManager.manager.me = me
-        kitura?.post("/aThird/setupUser", data: me, respondWith: { [weak self] (me: Me?, error: Error?) -> () in
-            if let error = error {
-                fatalError("\(error)")
-            }
-            DispatchQueue.main.async { [weak self] in
-                self?.performSegue(withIdentifier: "toBattle", sender: nil)
-            }
-        })
     }
 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A6ADC944E4578512539392A30852BCE4"
+               BlueprintIdentifier = "C2241324958F8F6F3132BD2A8B1B0766"
                BuildableName = "SwiftyRequest.framework"
                BlueprintName = "SwiftyRequest"
                ReferencedContainer = "container:Pods.xcodeproj">

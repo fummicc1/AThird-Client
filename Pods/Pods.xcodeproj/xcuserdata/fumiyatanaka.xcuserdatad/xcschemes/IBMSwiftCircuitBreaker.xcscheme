@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7B2D5DB6E49CB6E3A231083557EB1F01"
+               BlueprintIdentifier = "4655B1C3D0A5BD12BEF2608167512DE7"
                BuildableName = "CircuitBreaker.framework"
                BlueprintName = "IBMSwiftCircuitBreaker"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7B2D5DB6E49CB6E3A231083557EB1F01"
+            BlueprintIdentifier = "4655B1C3D0A5BD12BEF2608167512DE7"
             BuildableName = "CircuitBreaker.framework"
             BlueprintName = "IBMSwiftCircuitBreaker"
             ReferencedContainer = "container:Pods.xcodeproj">
