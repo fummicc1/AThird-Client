@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -576,7 +576,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GH466Z9456;
+				DEVELOPMENT_TEAM = 2X6AD4W323;
 				INFOPLIST_FILE = AThird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -595,7 +595,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GH466Z9456;
+				DEVELOPMENT_TEAM = 2X6AD4W323;
 				INFOPLIST_FILE = AThird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

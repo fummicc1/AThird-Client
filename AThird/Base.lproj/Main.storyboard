@@ -39,7 +39,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="Psk-SV-4BR">
                                 <rect key="frame" x="32" y="177" width="311" height="458"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBk-aB-Wis">
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBk-aB-Wis">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="110"/>
                                         <color key="backgroundColor" red="0.98431372549999996" green="0.7952244718" blue="0.4461377641" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="48"/>
@@ -48,7 +48,7 @@
                                             <action selector="didTapCardWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gbd-lI-zVA"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh6-Hw-tNn">
+                                    <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh6-Hw-tNn">
                                         <rect key="frame" x="0.0" y="174" width="311" height="110"/>
                                         <color key="backgroundColor" red="0.98431372549999996" green="0.7952244718" blue="0.4461377641" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="48"/>
@@ -57,7 +57,7 @@
                                             <action selector="didTapCardWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BJw-kS-VO7"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gua-5b-tpi">
+                                    <button opaque="NO" tag="33" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gua-5b-tpi">
                                         <rect key="frame" x="0.0" y="348" width="311" height="110"/>
                                         <color key="backgroundColor" red="0.98431372549999996" green="0.7952244718" blue="0.4461377641" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="48"/>
@@ -129,6 +129,7 @@
                                         <color key="backgroundColor" red="0.98431372549999996" green="0.7952244718" blue="0.4461377641" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="48"/>
                                         <connections>
+                                            <action selector="didTapCardWithSender:" destination="Ckk-oB-0Y4" eventType="touchUpInside" id="ehk-xM-4mK"/>
                                             <action selector="didTapCardWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xO7-BQ-L6x"/>
                                         </connections>
                                     </button>
@@ -137,6 +138,7 @@
                                         <color key="backgroundColor" red="0.98431372549999996" green="0.7952244718" blue="0.4461377641" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="48"/>
                                         <connections>
+                                            <action selector="didTapCardWithSender:" destination="Ckk-oB-0Y4" eventType="touchUpInside" id="1sc-fA-cIH"/>
                                             <action selector="didTapCardWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K98-ff-MT1"/>
                                         </connections>
                                     </button>
@@ -146,6 +148,7 @@
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="48"/>
                                         <connections>
                                             <action selector="didTapCardWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D4Z-Ef-mMG"/>
+                                            <action selector="didTapCardWithSender:" destination="Ckk-oB-0Y4" eventType="touchUpInside" id="clc-4U-OmO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -159,6 +162,7 @@
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="48"/>
                                         <state key="normal" title="1"/>
                                         <connections>
+                                            <action selector="didTapCardWithSender:" destination="Ckk-oB-0Y4" eventType="touchUpInside" id="AoI-TX-wrm"/>
                                             <action selector="didTapCardWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oSN-y3-rx6"/>
                                         </connections>
                                     </button>
@@ -168,6 +172,7 @@
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="48"/>
                                         <state key="normal" title="2"/>
                                         <connections>
+                                            <action selector="didTapCardWithSender:" destination="Ckk-oB-0Y4" eventType="touchUpInside" id="Hhg-H9-0Mo"/>
                                             <action selector="didTapCardWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cdj-4h-ZAl"/>
                                         </connections>
                                     </button>
@@ -177,14 +182,25 @@
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="48"/>
                                         <state key="normal" title="3"/>
                                         <connections>
+                                            <action selector="didTapCardWithSender:" destination="Ckk-oB-0Y4" eventType="touchUpInside" id="8nh-Qj-RGi"/>
                                             <action selector="didTapCardWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JvX-LX-iXR"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ターン" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gid-IG-UK0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相手のターン" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gid-IG-UK0">
                                 <rect key="frame" x="16" y="314.5" width="343" height="38.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3p-mg-PNX">
+                                <rect key="frame" x="0.0" y="20" width="375" height="0.0"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.95306998239999996" blue="0.68373129399999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="V4G-Yk-XNg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -193,12 +209,15 @@
                         <constraints>
                             <constraint firstItem="6Ry-hz-Teb" firstAttribute="trailing" secondItem="lez-Sc-qs4" secondAttribute="trailing" constant="16" id="1JO-FH-djd"/>
                             <constraint firstItem="Sd7-bW-efn" firstAttribute="leading" secondItem="6Ry-hz-Teb" secondAttribute="leading" constant="32" id="1bp-zQ-8sK"/>
+                            <constraint firstItem="I3p-mg-PNX" firstAttribute="leading" secondItem="6Ry-hz-Teb" secondAttribute="leading" id="5wv-Qf-d4m"/>
                             <constraint firstItem="0ns-ZR-Lot" firstAttribute="top" secondItem="Koo-Hn-xy2" secondAttribute="bottom" constant="64" id="Ljm-LE-FDv"/>
                             <constraint firstItem="Koo-Hn-xy2" firstAttribute="leading" secondItem="6Ry-hz-Teb" secondAttribute="leading" constant="32" id="MOX-eO-tdY"/>
                             <constraint firstItem="6Ry-hz-Teb" firstAttribute="trailing" secondItem="Koo-Hn-xy2" secondAttribute="trailing" constant="32" id="NNF-A2-faQ"/>
+                            <constraint firstItem="I3p-mg-PNX" firstAttribute="trailing" secondItem="6Ry-hz-Teb" secondAttribute="trailing" id="QjZ-m9-5nP"/>
                             <constraint firstItem="gid-IG-UK0" firstAttribute="centerY" secondItem="1je-K9-us5" secondAttribute="centerY" id="QsU-nV-grK"/>
                             <constraint firstItem="Sd7-bW-efn" firstAttribute="top" secondItem="lez-Sc-qs4" secondAttribute="bottom" constant="32" id="RKq-Os-OxF"/>
                             <constraint firstItem="0ns-ZR-Lot" firstAttribute="leading" secondItem="6Ry-hz-Teb" secondAttribute="leading" constant="16" id="cns-Yq-CIZ"/>
+                            <constraint firstItem="I3p-mg-PNX" firstAttribute="top" secondItem="6Ry-hz-Teb" secondAttribute="top" id="dMF-Ga-4xH"/>
                             <constraint firstItem="lez-Sc-qs4" firstAttribute="top" secondItem="6Ry-hz-Teb" secondAttribute="top" constant="32" id="e05-sZ-flN"/>
                             <constraint firstItem="6Ry-hz-Teb" firstAttribute="trailing" secondItem="Sd7-bW-efn" secondAttribute="trailing" constant="32" id="fRu-Rb-z2p"/>
                             <constraint firstItem="6Ry-hz-Teb" firstAttribute="trailing" secondItem="gid-IG-UK0" secondAttribute="trailing" constant="16" id="fTb-q5-lGu"/>
@@ -209,10 +228,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Ry-hz-Teb"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="I3p-mg-PNX" id="gZN-mr-LPk"/>
+                        <outlet property="labelHeightConstraint" destination="V4G-Yk-XNg" id="O3G-cS-mSB"/>
+                        <outlet property="opponentCard11" destination="PY4-Ab-ZHH" id="o1s-Bh-Q3L"/>
+                        <outlet property="opponentCard22" destination="qcF-x9-WGt" id="PHE-fV-UPM"/>
+                        <outlet property="opponentCard33" destination="Bbk-1P-2st" id="mgs-d1-0oh"/>
+                        <outlet property="turnLabel" destination="gid-IG-UK0" id="6KA-bh-aro"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TLS-ZL-50s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="134"/>
+            <point key="canvasLocation" x="901.60000000000002" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

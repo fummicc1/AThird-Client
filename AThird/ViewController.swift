@@ -28,7 +28,7 @@ class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate {
             return
         }
         let jokerNumber = sender.tag
-        var me = Me(name: name, joker: jokerNumber, score: nil)
+        var me = Me(name: name, joker: jokerNumber, score: nil, selectedCardTag: nil, isHost: false)
         if let scoredUnixDate = UserDefaults.standard.object(forKey: "scoredUnixDate") as? TimeInterval {
             let scoreValue = UserDefaults.standard.object(forKey: "scoreValue") as! Int
             me.score = Score(date: Date(timeIntervalSince1970: scoredUnixDate), value: scoreValue)
@@ -62,6 +62,11 @@ class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.moveToBattle()
             }
+        } else if text == "Opponent Found!! You are Host!" {
+            GameManager.shared.me?.isHost = true
+            DispatchQueue.main.async {
+                self.moveToBattle()
+            }
         } else if text == "Looking For Opponent!!" {
             DispatchQueue.main.async {
                 let alert = UIAlertController(title: "🔄", message: "対戦相手を探しています。", preferredStyle: .alert)
@@ -75,6 +80,7 @@ class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate {
             return
         }
         GameManager.shared.opponent = opponent
+        
     }
     
     func moveToBattle() {
