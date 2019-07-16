@@ -10,7 +10,6 @@ class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         socket.delegate = self
-        socket.connect()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,6 +38,7 @@ class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate {
         guard let data = try? JSONEncoder().encode(me) else {
             return
         }
+        socket.connect()
         socket.write(data: data)
     }
     
@@ -62,6 +62,11 @@ class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate {
             DispatchQueue.main.async {
                 self.moveToBattle()
             }
+        } else if text == "Looking For Opponent!!" {
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "🔄", message: "対戦相手を探しています。", preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
     
@@ -73,6 +78,9 @@ class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate {
     }
     
     func moveToBattle() {
+        if presentedViewController is UIAlertController {
+            dismiss(animated: true, completion: nil)
+        }
         performSegue(withIdentifier: "toBattle", sender: socket)
     }
 }
