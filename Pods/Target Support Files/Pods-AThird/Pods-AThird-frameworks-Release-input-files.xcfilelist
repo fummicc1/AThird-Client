@@ -4,6 +4,5 @@ ${BUILT_PRODUCTS_DIR}/KituraContracts/KituraContracts.framework
 ${BUILT_PRODUCTS_DIR}/KituraKit/KituraKit.framework
 ${BUILT_PRODUCTS_DIR}/LoggerAPI/LoggerAPI.framework
 ${BUILT_PRODUCTS_DIR}/Logging/Logging.framework
-${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework
 ${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyRequest/SwiftyRequest.framework

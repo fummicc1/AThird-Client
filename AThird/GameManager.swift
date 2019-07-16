@@ -1,9 +1,12 @@
 import Foundation
-import KituraKit
+
+class Server {
+    static let url: String = "ws://localhost:8080/battle/"
+}
 
 class GameManager {
-    static let manager = GameManager()
-    private init() {}
+    
+    static let shared = GameManager()
     
     var me: Me?
     var opponent: Opponent?

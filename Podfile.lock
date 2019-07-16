@@ -9,8 +9,6 @@ PODS:
   - LoggerAPI (1.9.0):
     - Logging (~> 1.1)
   - Logging (1.1.0)
-  - Socket.IO-Client-Swift (15.1.0):
-    - Starscream (~> 3.1)
   - Starscream (3.1.0)
   - SwiftyRequest (2.0.6):
     - IBMSwiftCircuitBreaker (~> 5.0)
@@ -18,7 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - KituraKit
-  - Socket.IO-Client-Swift (~> 15.1.0)
+  - Starscream
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -27,7 +25,6 @@ SPEC REPOS:
     - KituraKit
     - LoggerAPI
     - Logging
-    - Socket.IO-Client-Swift
     - Starscream
     - SwiftyRequest
 
@@ -37,10 +34,9 @@ SPEC CHECKSUMS:
   KituraKit: 6ba9557461bc3a287352f0987c7ce8340242fc2e
   LoggerAPI: fb78461eedac5316b290f2404d88b9d614d96c57
   Logging: 0f0b5d7d124fab770fde88cf942cb57a63804236
-  Socket.IO-Client-Swift: 7cb44c0ffb86e158cee32d0642d30ec5fdcf8f61
   Starscream: 08172b481e145289c4930cb567230fb55897cfa4
   SwiftyRequest: 64cd713bf59151e19c4c5ff59edc35bb4e4dac04
 
-PODFILE CHECKSUM: 4dfa2c4d5dec9b92ddc43485738d36f4a083b041
+PODFILE CHECKSUM: 6859507ea57428f10a2853883481a2a9e71d4d81
 
 COCOAPODS: 1.7.4

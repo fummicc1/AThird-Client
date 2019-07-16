@@ -166,7 +166,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/KituraKit/KituraKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LoggerAPI/LoggerAPI.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Logging/Logging.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyRequest/SwiftyRequest.framework"
 fi
@@ -176,7 +175,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/KituraKit/KituraKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LoggerAPI/LoggerAPI.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Logging/Logging.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyRequest/SwiftyRequest.framework"
 fi
