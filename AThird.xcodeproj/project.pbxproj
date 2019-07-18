@@ -18,6 +18,7 @@
 		D371F11F2248CC7C007B036D /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371F11E2248CC7C007B036D /* GameManager.swift */; };
 		D371F1212248CCBA007B036D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371F1202248CCBA007B036D /* User.swift */; };
 		D371F1232248DCAC007B036D /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371F1222248DCAC007B036D /* BattleViewController.swift */; };
+		D391512C22E000E100387579 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D391512B22E000E100387579 /* ResultViewController.swift */; };
 		D74C96EAC3C6D010D613E685 /* Pods_AThird.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2909762E246505EA562292CE /* Pods_AThird.framework */; };
 		E7D95825E9419927362AD171 /* Pods_AThirdUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166229A644E0ED58863AC83D /* Pods_AThirdUITests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		D371F11E2248CC7C007B036D /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		D371F1202248CCBA007B036D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D371F1222248DCAC007B036D /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		D391512B22E000E100387579 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		D6796DB57DE9095BAD78D996 /* Pods-AThirdTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AThirdTests.debug.xcconfig"; path = "Target Support Files/Pods-AThirdTests/Pods-AThirdTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF91D4C5324D39E478E629EA /* Pods-AThirdUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AThirdUITests.release.xcconfig"; path = "Target Support Files/Pods-AThirdUITests/Pods-AThirdUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E00C699E5D2207B30C984027 /* Pods-AThird.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AThird.release.xcconfig"; path = "Target Support Files/Pods-AThird/Pods-AThird.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				D32CD8B7224743E9008B4CCA /* Assets.xcassets */,
 				D32CD8B9224743E9008B4CCA /* LaunchScreen.storyboard */,
 				D32CD8B4224743E7008B4CCA /* Main.storyboard */,
+				D391512B22E000E100387579 /* ResultViewController.swift */,
 			);
 			path = AThird;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				D371F1212248CCBA007B036D /* User.swift in Sources */,
 				D32CD8B1224743E7008B4CCA /* AppDelegate.swift in Sources */,
 				D371F1232248DCAC007B036D /* BattleViewController.swift in Sources */,
+				D391512C22E000E100387579 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

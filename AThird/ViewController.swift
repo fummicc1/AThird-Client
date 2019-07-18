@@ -5,11 +5,20 @@ class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate {
     
     @IBOutlet var nameTextField: UITextField!
     
+    @IBOutlet var jokerCandidateButtonArray: [UIButton]!
+    
     var socket: WebSocket = WebSocket(url: URL(string: Server.url)!)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         socket.delegate = self
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        for button in jokerCandidateButtonArray {
+            button.layer.cornerRadius = button.frame.height / 2
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -28,11 +37,7 @@ class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate {
             return
         }
         let jokerNumber = sender.tag
-        var me = Me(name: name, joker: jokerNumber, score: nil, selectedCardTag: nil, isHost: false)
-        if let scoredUnixDate = UserDefaults.standard.object(forKey: "scoredUnixDate") as? TimeInterval {
-            let scoreValue = UserDefaults.standard.object(forKey: "scoreValue") as! Int
-            me.score = Score(date: Date(timeIntervalSince1970: scoredUnixDate), value: scoreValue)
-        }
+        let me = Me(name: name, joker: jokerNumber, selectedCardTag: nil, isHost: false, isAttacking: false)
         GameManager.shared.me = me
         
         guard let data = try? JSONEncoder().encode(me) else {
@@ -79,8 +84,7 @@ class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate {
         guard let opponent = try? JSONDecoder().decode(Opponent.self, from: data) else {
             return
         }
-        GameManager.shared.opponent = opponent
-        
+        GameManager.shared.opponent = opponent        
     }
     
     func moveToBattle() {
