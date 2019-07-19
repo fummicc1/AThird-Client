@@ -13,7 +13,6 @@ class BattleViewController: UIViewController, WebSocketDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        GameManager.shared.battleViewController = self
         socket?.delegate = self
         setLabelText("バトルが始まりました。頑張りましょう。")
         if GameManager.shared.me!.isHost {
@@ -30,8 +29,7 @@ class BattleViewController: UIViewController, WebSocketDelegate {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        GameManager.shared.battleViewController = nil
+        super.viewWillDisappear(animated)        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -7,7 +7,7 @@ target 'AThird' do
 
   # Pods for AThird
 pod 'KituraKit'
-pod 'Starscream'
+pod 'Socket.IO-Client-Swift'
 
   target 'AThirdTests' do
     inherit! :search_paths

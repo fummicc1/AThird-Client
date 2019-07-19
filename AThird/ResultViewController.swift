@@ -18,4 +18,10 @@ class ResultViewController: UIViewController {
         myJokerLabel.text = "マイジョーカー\n\(GameManager.shared.me!.joker % 10)"
         opponentJokerLabel.text = "敵のジョーカー\n\(GameManager.shared.opponent!.joker % 10)"
     }
+    
+    @IBAction func retry() {
+        GameManager.shared.me = nil
+        GameManager.shared.opponent = nil        
+        presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
 }

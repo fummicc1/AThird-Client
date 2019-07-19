@@ -149,12 +149,12 @@
 				D32CD8B0224743E7008B4CCA /* AppDelegate.swift */,
 				D371F1222248DCAC007B036D /* BattleViewController.swift */,
 				D371F11E2248CC7C007B036D /* GameManager.swift */,
+				D391512B22E000E100387579 /* ResultViewController.swift */,
 				D371F1202248CCBA007B036D /* User.swift */,
 				D32CD8B2224743E7008B4CCA /* ViewController.swift */,
 				D32CD8B7224743E9008B4CCA /* Assets.xcassets */,
 				D32CD8B9224743E9008B4CCA /* LaunchScreen.storyboard */,
 				D32CD8B4224743E7008B4CCA /* Main.storyboard */,
-				D391512B22E000E100387579 /* ResultViewController.swift */,
 			);
 			path = AThird;
 			sourceTree = "<group>";

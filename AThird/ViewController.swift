@@ -7,10 +7,10 @@ class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate {
     
     @IBOutlet var jokerCandidateButtonArray: [UIButton]!
     
-    var socket: WebSocket = WebSocket(url: URL(string: Server.url)!)
+    var socket: WebSocket = WebSocket(url: URL(string: Server.url)!, protocols: ["selectCard"])
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         socket.delegate = self
     }
     
