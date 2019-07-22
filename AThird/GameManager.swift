@@ -1,7 +1,8 @@
 import Foundation
+import Starscream
 
 class Server {
-    static let url: String = "https://athird-swift.herokuapp.com/"
+    static let url: String = "ws://localhost:8080/socket"
 }
 
 class GameManager {
