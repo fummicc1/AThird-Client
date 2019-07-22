@@ -49,19 +49,12 @@ extension ResultViewController: WebSocketDelegate {
     }
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-        
         if let opponent = try? JSONDecoder().decode(Opponent.self, from: data) {
             GameManager.shared.opponent = opponent
             if opponent.webSocketEventName == .opponent {
                 DispatchQueue.main.async {
                     self.displayResult()
                 }
-            }
-        } else if let result = try? JSONDecoder().decode(Result.self, from: data) {
-            if result.webSocketEventName == .selectCard {
-                
-            } else if result.webSocketEventName == .choiceResult {
-                
             }
         }
     }

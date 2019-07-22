@@ -33,5 +33,6 @@ enum WebSocketEventName: String, Codable {
     case temptationJoker
     case connect
     case disConnect
+    case battleFinished
     case none
 }

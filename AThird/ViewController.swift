@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             return
         }
         let jokerNumber = sender.tag
-        let me = Me(name: name, joker: jokerNumber, selectedCardTag: nil, isHost: false, isAttacking: false ,webSocketEventName: .none)
+        let me = Me(name: name, joker: jokerNumber, selectedCardTag: nil, isHost: true, isAttacking: false ,webSocketEventName: .none)
         GameManager.shared.me = me
         socket.connect()
         let alert = UIAlertController(title: "🔄", message: "対戦相手を探しています。", preferredStyle: .alert)
@@ -52,17 +52,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func moveToBattle() {
         if presentedViewController is UIAlertController {
-            dismiss(animated: true, completion: nil)
+            dismiss(animated: true, completion: {
+                self.performSegue(withIdentifier: "toBattle", sender: self.socket)
+            })
         }
-        performSegue(withIdentifier: "toBattle", sender: socket)
     }
 }
 
 extension ViewController: WebSocketDelegate {
     func websocketDidConnect(socket: WebSocketClient) {
-        if let me = GameManager.shared.me, let data = try? JSONEncoder().encode(me) {
-            socket.write(data: data)
-        }
     }
     
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
@@ -86,6 +84,11 @@ extension ViewController: WebSocketDelegate {
     }
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+        GameManager.shared.me?.webSocketEventName = .connect
+        if text == "Connect", let me = GameManager.shared.me, let data = try? JSONEncoder().encode(me) {
+            GameManager.shared.me?.isHost = false
+            socket.write(data: data)
+        }
     }
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {

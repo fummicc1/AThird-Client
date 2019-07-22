@@ -40,15 +40,15 @@ class BattleViewController: UIViewController {
     @IBAction func didTapCard(sender: UIButton) {
         GameManager.shared.me?.selectedCardTag = sender.tag
         if [11, 22, 33].contains(sender.tag), GameManager.shared.me?.isAttacking == true {
-            sendMyPrediction(selectCardTag: sender.tag)
+            sendMyPrediction(selectCardTag: sender.tag, eventName: .selectCard)
         } else if [1, 2, 3].contains(sender.tag), GameManager.shared.me?.isAttacking == false {
-            sendMyPrediction(selectCardTag: sender.tag)
+            sendMyPrediction(selectCardTag: sender.tag, eventName: .temptationJoker)
         }
     }
     
     // 相手のジョーカーを決定！送信！
-    func sendMyPrediction(selectCardTag: Int) {
-        let result = Result(answer: nil, selectTag: selectCardTag, webSocketEventName: .selectCard)
+    func sendMyPrediction(selectCardTag: Int, eventName: WebSocketEventName) {
+        let result = Result(answer: nil, selectTag: selectCardTag, webSocketEventName: eventName)
         if let data = try? JSONEncoder().encode(result) {
             socket?.write(data: data)
         }
@@ -63,10 +63,11 @@ class BattleViewController: UIViewController {
             setLabelText("相手にジョーカーを引かれてしまいました。GameOverです。。。")
             GameManager.shared.me?.webSocketEventName = .opponent
             if let opponent = GameManager.shared.me, let data = try? JSONEncoder().encode(opponent) {
-                socket?.write(data: data)
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.performSegue(withIdentifier: "toResult", sender: false)
+                socket?.write(data: data, completion: {
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "toResult", sender: false)
+                    }
+                })
             }
         } else {
             setLabelText("おめでとうございます！相手はジョーカーを引かずに、\(result.selectTag % 10)を引きました。チャンスです！")
@@ -76,15 +77,16 @@ class BattleViewController: UIViewController {
         }
     }
     
-    func showChosenResult(result: Bool) {
-        if result {
+    func showChosenResult(result: Result) {
+        if result.isCorrect {
             setLabelText("お見事です！ジョーカーを無事に当てました！")
             GameManager.shared.me?.webSocketEventName = .opponent
             if let opponent = GameManager.shared.me, let data = try? JSONEncoder().encode(opponent) {
-                socket?.write(data: data)
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.performSegue(withIdentifier: "toResult", sender: true)
+                socket?.write(data: data, completion: {
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "toResult", sender: true)
+                    }
+                })
             }
         } else {
             setLabelText("残念。ジョーカーを外してしまいました。。。")
@@ -153,16 +155,21 @@ extension BattleViewController: WebSocketDelegate {
     }
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-        if let opponent = try? JSONDecoder().decode(Opponent.self, from: data) {
+        if let opponent = try? JSONDecoder().decode(Opponent.self, from: data), opponent.webSocketEventName == .opponent {
             GameManager.shared.opponent = opponent
-        } else if let result = try? JSONDecoder().decode(Result.self, from: data) {
+        } else if var result = try? JSONDecoder().decode(Result.self, from: data) {
             DispatchQueue.main.async {
                 if result.webSocketEventName == .selectCard {
-                    self.showOpponentChoice(result: result)
-                } else if result.webSocketEventName == .choiceResult {
-                    self.showChosenResult(result: result.isCorrect)
+                    result.answer = GameManager.shared.me?.joker
+                    result.webSocketEventName = .choiceResult
+                    let data = try! JSONEncoder().encode(result)
+                    self.socket?.write(data: data) {
+                        self.showOpponentChoice(result: result)
+                    }
                 } else if result.webSocketEventName == .temptationJoker {
                     self.dummyMovement(tag: result.selectTag)
+                } else if result.webSocketEventName == .choiceResult {
+                    self.showChosenResult(result: result)
                 }
             }
         }
