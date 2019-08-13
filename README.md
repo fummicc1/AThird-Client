@@ -7,7 +7,7 @@
 全てSwiftで実装しています。(Kitura使用)
 バックエンド側 :https://github.com/fummicc1/AThird-Server
 
-一応、WebSocketで書いています！！いえーーい！
+一応、WebSocketで書いています!!
 
 # Demo
 ![Demo](./demo.gif)
