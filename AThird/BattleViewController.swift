@@ -1,10 +1,9 @@
 import UIKit
 import Starscream
 
-class BattleViewController: UIViewController, WebSocketDelegate {
+class BattleViewController: UIViewController {
     
     @IBOutlet var turnLabel: UILabel!
-    
     @IBOutlet var opponentCard11: UIButton!
     @IBOutlet var opponentCard22: UIButton!
     @IBOutlet var opponentCard33: UIButton!
@@ -13,7 +12,6 @@ class BattleViewController: UIViewController, WebSocketDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        socket?.delegate = self
         setLabelText("バトルが始まりました。頑張りましょう。")
         if GameManager.shared.me!.isHost {
             GameManager.shared.me?.isAttacking = true
@@ -28,104 +26,72 @@ class BattleViewController: UIViewController, WebSocketDelegate {
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        socket?.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! ResultViewController
         destination.isWin = sender as! Bool
+        destination.socket = socket
     }
     
     @IBAction func didTapCard(sender: UIButton) {
         GameManager.shared.me?.selectedCardTag = sender.tag
         if [11, 22, 33].contains(sender.tag), GameManager.shared.me?.isAttacking == true {
-            sendMyPrediction()
+            sendMyPrediction(selectCardTag: sender.tag, eventName: .selectCard)
         } else if [1, 2, 3].contains(sender.tag), GameManager.shared.me?.isAttacking == false {
-            sendMyPrediction()
+            sendMyPrediction(selectCardTag: sender.tag, eventName: .temptationJoker)
         }
     }
     
     // 相手のジョーカーを決定！送信！
-    func sendMyPrediction() {
-        guard let data = try? JSONEncoder().encode(GameManager.shared.me!) else {
-            return
+    func sendMyPrediction(selectCardTag: Int, eventName: WebSocketEventName) {
+        let result = Result(answer: nil, selectTag: selectCardTag, webSocketEventName: eventName)
+        if let data = try? JSONEncoder().encode(result) {
+            socket?.write(data: data)
         }
-        socket?.write(data: data)
     }
     
     func setLabelText(_ text: String) {
         turnLabel.text = text
     }
     
-    func websocketDidConnect(socket: WebSocketClient) { }
-    
-    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
-        DispatchQueue.main.async {
-            let alert = UIAlertController(title: "エラー", message: "通信が切断されました。", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "戻る", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    // ここは、カードを選んだ結果の判定をするのみ。
-    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
-    }
-    
-    func showOpponentChoice(position: Int) {
-        if position == GameManager.shared.me?.joker {
+    func showOpponentChoice(result: Result) {
+        if result.isCorrect {
             setLabelText("相手にジョーカーを引かれてしまいました。GameOverです。。。")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.performSegue(withIdentifier: "toResult", sender: false)
+            GameManager.shared.me?.webSocketEventName = .opponent
+            if let opponent = GameManager.shared.me, let data = try? JSONEncoder().encode(opponent) {
+                socket?.write(data: data, completion: {
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "toResult", sender: false)
+                    }
+                })
             }
         } else {
-            setLabelText("おめでとうございます！相手はジョーカーを引かずに、\(position % 10)を引きました。チャンスです！")
+            setLabelText("おめでとうございます！相手はジョーカーを引かずに、\(result.selectTag % 10)を引きました。チャンスです！")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.moveToNextTurn()
             }
         }
     }
     
-    func showChosenResult(result: Bool) {
-        if result {
+    func showChosenResult(result: Result) {
+        if result.isCorrect {
             setLabelText("お見事です！ジョーカーを無事に当てました！")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.performSegue(withIdentifier: "toResult", sender: true)
+            GameManager.shared.me?.webSocketEventName = .opponent
+            if let opponent = GameManager.shared.me, let data = try? JSONEncoder().encode(opponent) {
+                socket?.write(data: data, completion: {
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "toResult", sender: true)
+                    }
+                })
             }
         } else {
             setLabelText("残念。ジョーカーを外してしまいました。。。")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.moveToNextTurn()
-            }
-        }
-    }
-    
-    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-        if let opponent = try? JSONDecoder().decode(Opponent.self, from: data) {
-            GameManager.shared.opponent = opponent
-            if let opponentSelectedTag = opponent.selectedCardTag, opponentSelectedTag == GameManager.shared.me?.joker {
-                // 相手が攻撃をして、正解した場合
-                let resultData = try! JSONEncoder().encode(Result(answer: opponentSelectedTag, selectTag: opponentSelectedTag))
-                socket.write(data: resultData)
-                DispatchQueue.main.async {
-                    self.showOpponentChoice(position: opponentSelectedTag)
-                }
-            } else if let opponentSelectedTag = opponent.selectedCardTag, opponentSelectedTag != GameManager.shared.me?.joker, [11, 22, 33].contains(opponentSelectedTag) {
-                // 相手が攻撃をして、外した場合 (自分は受け。)
-                let resultData = try! JSONEncoder().encode(Result(answer: GameManager.shared.me!.joker, selectTag: opponentSelectedTag))
-                socket.write(data: resultData)
-                DispatchQueue.main.async {
-                    self.showOpponentChoice(position: opponentSelectedTag)
-                }
-            } else if let opponentSelectedTag = opponent.selectedCardTag, [1, 2, 3].contains(opponentSelectedTag) {
-                // ダミー動作を送信。受信者は攻撃ターン。
-                DispatchQueue.main.async {
-                    self.dummyMovement(tag: opponentSelectedTag)
-                }
-            }
-        } else if let result = try? JSONDecoder().decode(Result.self, from: data) {
-            DispatchQueue.main.async {
-                self.showChosenResult(result: result.isCorrect)
             }
         }
     }
@@ -167,5 +133,45 @@ class BattleViewController: UIViewController, WebSocketDelegate {
         opponentCard11.setTitle("1", for: .normal)
         opponentCard22.setTitle("2", for: .normal)
         opponentCard33.setTitle("3", for: .normal)
+    }
+}
+
+extension BattleViewController: WebSocketDelegate {
+    func websocketDidConnect(socket: WebSocketClient) {
+        
+    }
+    
+    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "エラー", message: "通信が切断されました。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "戻る", style: .default, handler: { _ in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+    }
+    
+    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+        if let opponent = try? JSONDecoder().decode(Opponent.self, from: data), opponent.webSocketEventName == .opponent {
+            GameManager.shared.opponent = opponent
+        } else if var result = try? JSONDecoder().decode(Result.self, from: data) {
+            DispatchQueue.main.async {
+                if result.webSocketEventName == .selectCard {
+                    result.answer = GameManager.shared.me?.joker
+                    result.webSocketEventName = .choiceResult
+                    let data = try! JSONEncoder().encode(result)
+                    self.socket?.write(data: data) {
+                        self.showOpponentChoice(result: result)
+                    }
+                } else if result.webSocketEventName == .temptationJoker {
+                    self.dummyMovement(tag: result.selectTag)
+                } else if result.webSocketEventName == .choiceResult {
+                    self.showChosenResult(result: result)
+                }
+            }
+        }
     }
 }
